@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --PaleOrange: hsl(25, 100%, 94%);
+  --VeryVarkBlue: hsl(220, 13%, 13%);
+  --DarkGrayishBlue: hsl(219, 9%, 45%);
+  --GrayishBlue: hsl(220, 14%, 75%);
+  --LightGrayishBlue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsla(0, 0%, 0%, 0.75);
+}
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--LightGrayishBlue);
+  width: 100%;
+  height: 110px;
+}
+
+.containerLeft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+}
+.containerMenu {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.containerMenu a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  line-height: 110px;
+  color: var(--GrayishBlue);
+  transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+  padding: 0 0.5rem;
+}
+.containerMenu a:hover {
+  color: var(--VeryVarkBlue);
+  border-bottom: 3.5px solid var(--Orange);
+}
+
+.containerRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-end;
+  height: 100%;
+  width: 8%;
+}
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.countCart {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.5rem;
+  background-color: var(--Orange);
+  color: var(--White);
+  width: 1.2rem;
+  border-radius: 50%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.6rem;
+}
+.shoppingCart {
+}
+
+.userContainer {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.userContainer:hover {
+  border: 2px solid var(--Orange);
+}
