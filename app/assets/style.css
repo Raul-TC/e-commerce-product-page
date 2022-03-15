@@ -3,6 +3,7 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -213,15 +214,24 @@ header {
   width: 80%;
   margin: 0 auto;
 }
-.imagesContainer img {
+.image {
   width: 18.75%;
-  border-radius: 15px;
   cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+}
+.image img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .imagesContainer img:hover {
   opacity: 0.5;
 }
 .active {
-  box-shadow: 0 0 0px 5px var(--Orange);
+  border: 3px solid var(--Orange);
+}
+.opacityImage {
   opacity: 0.5;
 }

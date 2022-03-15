@@ -28,9 +28,13 @@ export function LeftSide() {
           filterNull = $images.filter((el) => e.target.src !== el.src);
           console.info(filterNull);
           filter.forEach((el) => {
-            el.classList.add("active");
+            el.parentNode.classList.add("active");
+            el.classList.add("opacityImage");
           });
-          filterNull.forEach((el) => el.classList.remove("active"));
+          filterNull.forEach((el) => {
+            el.parentNode.classList.remove("active");
+            el.classList.remove("opacityImage");
+          });
         }
       },
       100

@@ -4,11 +4,10 @@ export function ImagesSlide() {
   $imagesContainer.classList.add("imagesContainer");
 
   $imagesContainer.innerHTML = `
-<img src="app/assets/image-product-1.jpg" alt="product01">
-<img src="app/assets/image-product-2.jpg" alt="product02">
-<img src="app/assets/image-product-3.jpg" alt="product03">
-<img src="app/assets/image-product-4.jpg" alt="product0">
-
+<div class="image"><img src="app/assets/image-product-1.jpg" alt="product01"></div>
+<div class="image"><img src="app/assets/image-product-2.jpg" alt="product02"></div>
+<div class="image"><img src="app/assets/image-product-3.jpg" alt="product03"></div>
+<div class="image"><img src="app/assets/image-product-4.jpg" alt="product04"></div>
 `;
 
   return $imagesContainer;
