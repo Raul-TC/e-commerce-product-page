@@ -13,11 +13,12 @@
   --GrayishBlue: hsl(220, 14%, 75%);
   --LightGrayishBlue: hsl(223, 64%, 98%);
   --White: hsl(0, 0%, 100%);
-  --Black: hsla(0, 0%, 0%, 0.75);
+  --Black: hsla(0, 0%, 0%, 0.349);
 }
 html {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 16px;
+  background-color: var(--White);
 }
 
 body {
@@ -71,6 +72,7 @@ header {
   align-self: flex-end;
   height: 100%;
   width: 8%;
+  position: relative;
 }
 .cart {
   position: relative;
@@ -80,6 +82,69 @@ header {
   cursor: pointer;
 }
 
+.divCard {
+  background-color: var(--White);
+  box-shadow: 0 5px 10px var(--Black);
+  position: absolute;
+  border-radius: 7px;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  right: -4rem;
+  height: auto;
+  z-index: 999;
+}
+.elementsCart {
+  padding: 1rem;
+}
+.element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.imageProduct {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 5px;
+}
+.price p,
+#priceBase {
+  font-size: 0.9rem;
+  color: var(--DarkGrayishBlue);
+}
+
+#totalPrice {
+  color: var(--VeryVarkBlue);
+  font-weight: 700;
+}
+.trash {
+  width: 1rem;
+  cursor: pointer;
+}
+.btnCheckout {
+  background-color: var(--Orange);
+  color: var(--White);
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btnCheckout:hover {
+  background-color: var(--PaleOrange);
+  color: var(--Orange);
+}
+.cartName {
+  font-size: 1rem;
+  color: var(--Black);
+  font-weight: 700;
+  padding: 1rem;
+  border-bottom: 3px solid var(--LightGrayishBlue);
+}
 .countCart {
   position: absolute;
   top: -0.4rem;
@@ -93,9 +158,16 @@ header {
   text-align: center;
   font-size: 0.6rem;
 }
-.shoppingCart {
+.cartEmpty {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.emptyText {
+  color: var(--DarkGrayishBlue);
+  font-weight: 700;
+}
 .userContainer {
   width: 3.3rem;
   height: 3.3rem;
@@ -104,4 +176,52 @@ header {
 }
 .userContainer:hover {
   border: 2px solid var(--Orange);
+}
+
+.none {
+  display: none;
+}
+
+/*Main Styles*/
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 90%;
+  margin: 5rem auto 0;
+}
+.leftSide {
+  width: 100%;
+}
+.imageMain {
+  width: 100%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageMain img {
+  width: 80%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.imagesContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.imagesContainer img {
+  width: 18.75%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.imagesContainer img:hover {
+  opacity: 0.5;
+}
+.active {
+  box-shadow: 0 0 0px 5px var(--Orange);
+  opacity: 0.5;
 }
