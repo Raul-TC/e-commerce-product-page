@@ -14,7 +14,7 @@
   --GrayishBlue: hsl(220, 14%, 75%);
   --LightGrayishBlue: hsl(223, 64%, 98%);
   --White: hsl(0, 0%, 100%);
-  --Black: hsla(0, 0%, 0%, 0.349);
+  --Black: hsla(0, 0%, 0%, 0.795);
 }
 html {
   font-family: "Kumbh Sans", sans-serif;
@@ -205,6 +205,7 @@ header {
   width: 80%;
   border-radius: 15px;
   text-align: center;
+  cursor: pointer;
 }
 
 .imagesContainer {
@@ -234,4 +235,75 @@ header {
 }
 .opacityImage {
   opacity: 0.5;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--Black);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carrousel {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.close,
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+}
+.activeModalImg {
+  display: block;
+  border-radius: 15px;
+}
+.modal .imagesContainer {
+  margin-top: 2rem;
+  width: 25%;
+}
+
+.close {
+  right: 0;
+  top: -2rem;
+  width: 1.5rem;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.arrowLeft {
+  background-color: var(--White);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: -1rem;
+}
+.arrowRight {
+  right: -1rem;
+  background-color: var(--White);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.none {
+  display: none;
 }
