@@ -8,11 +8,12 @@ export function LeftSide() {
 
   $leftSideDiv.appendChild(ImageMain());
   $leftSideDiv.appendChild(ImagesSlide());
+  let plus = 1;
   setTimeout(() => {
     const $images = Array.from(
       document.querySelectorAll(".imagesContainer img")
     );
-
+    let thumbnail = document.querySelectorAll(".modal .imagesContainer img");
     // console.info($images);
     document.addEventListener(
       "click",
@@ -39,12 +40,52 @@ export function LeftSide() {
             el.parentNode.classList.remove("active");
             el.classList.remove("opacityImage");
           });
+          document.querySelector(".slider-slides img").src = e.target.src;
+          document.querySelector(".slider-slides img").alt = e.target.alt;
+          document.querySelector(".slider-slides img").dataset.id =
+            e.target.dataset.id;
+        }
+        function aumentar(suma) {
+          return (document.querySelector(".slider-slides img").src =
+            thumbnail[suma].src);
+        }
+        if (
+          e.target.matches(".arrowRight") ||
+          e.target.matches(".arrowRight *")
+        ) {
+          plus++;
+          aumentar(plus);
+
+          if (plus >= thumbnail.length - 1) {
+            plus = 0;
+            aumentar(plus);
+          }
+          console.info(plus);
         }
 
+        if (
+          e.target.matches(".arrowLeft") ||
+          e.target.matches(".arrowLeft *")
+        ) {
+          plus--;
+          aumentar(plus);
+
+          if (plus <= 0) {
+            plus = thumbnail.length - 1;
+            aumentar(plus);
+          }
+          console.info(plus);
+        }
         if (e.target.matches(".imageMain img")) {
           document.querySelector(".modal").classList.remove("none");
+          document.querySelector(".slider-slides img").src =
+            document.querySelector(".imageMain img").src;
+          console.info(
+            document.querySelectorAll(".modal .imagesContainer img")
+          );
         }
-        if (e.target.matches(".close")) {
+
+        if (e.target.matches(".close") || e.target.matches(".modal")) {
           document.querySelector(".modal").classList.add("none");
         }
       },

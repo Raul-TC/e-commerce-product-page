@@ -52,6 +52,7 @@ header {
   align-items: center;
   height: 100%;
 }
+
 .containerMenu a {
   display: block;
   height: 100%;
@@ -61,6 +62,7 @@ header {
   transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
   padding: 0 0.5rem;
 }
+
 .containerMenu a:hover {
   color: var(--VeryVarkBlue);
   border-bottom: 3.5px solid var(--Orange);
@@ -75,6 +77,7 @@ header {
   width: 8%;
   position: relative;
 }
+
 .cart {
   position: relative;
   display: flex;
@@ -110,7 +113,7 @@ header {
   height: 2.9rem;
   border-radius: 5px;
 }
-.price p,
+.element .price p,
 #priceBase {
   font-size: 0.9rem;
   color: var(--DarkGrayishBlue);
@@ -189,6 +192,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 90%;
+  gap: 90px;
   margin: 5rem auto 0;
 }
 .leftSide {
@@ -286,20 +290,20 @@ header {
 
 .arrowLeft {
   background-color: var(--White);
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  left: -1rem;
+  left: -2rem;
   cursor: pointer;
 }
 .arrowRight {
-  right: -1rem;
+  right: -2rem;
   background-color: var(--White);
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -315,7 +319,9 @@ header {
   position: relative;
   height: auto;
 }
-
+.slider-slides img {
+  border-radius: 15px;
+}
 .slider-slide {
   height: 100%;
   width: 100%;
@@ -330,4 +336,85 @@ header {
 .slider-slide.activeImage {
   visibility: visible;
   opacity: 1;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  padding-right: 8rem;
+}
+
+.rightSide h1 {
+  margin: 4rem 0 1rem 0;
+  font-size: 0.8rem;
+  color: var(--Orange);
+  letter-spacing: 0.1rem;
+}
+.rightSide h2 {
+  font-size: 3rem;
+  margin-bottom: 2.2rem;
+}
+.description {
+  color: var(--DarkGrayishBlue);
+  margin-bottom: 2rem;
+}
+.price {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.price p {
+  font-size: 2rem;
+  color: var(--Black);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.porcentaje {
+  background-color: var(--PaleOrange);
+  color: var(--Orange);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.15rem 0.8rem;
+}
+.priceDecoration {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+}
+
+.containerPrice {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+.counter {
+  background-color: var(--LightGrayishBlue);
+  margin: 0;
+  padding: 1rem;
+  font-weight: 700;
+}
+.counter span {
+  padding: 1rem;
+}
+.minus,
+.plus {
+  cursor: pointer;
+}
+.addToCart {
+  background-color: var(--Orange);
+  color: var(--White);
+  outline: none;
+  border: none;
+  padding: 0.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.addToCart p {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
 }

@@ -5,7 +5,7 @@ export function ShoppingCart() {
 
   $containerShoppingCart.innerHTML = `<div class="cart"> 
   <img src="app/assets/icon-cart.svg" alt="icon-cart">
-  <span class="countCart">3</span>
+  <span class="countCart">0</span>
   </div> `;
 
   return $containerShoppingCart;

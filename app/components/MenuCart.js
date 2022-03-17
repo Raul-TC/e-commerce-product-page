@@ -5,7 +5,7 @@ export function MenuCart() {
 
   $divCard.innerHTML = `
     <p class="cartName">Cart</p>
-    <div class="cartEmpty none">
+    <div class="cartEmpty">
     <p class="emptyText">Your cart is empty.</p>
     </div>
     <div class="elementsCart none">
@@ -27,7 +27,7 @@ export function MenuCart() {
       e.target.matches(".shoppingCart *")
     ) {
       document.querySelector(".divCard").classList.toggle("none");
-      document.querySelector(".elementsCart").classList.toggle("none");
+      // document.querySelector(".elementsCart").classList.toggle("none");
     }
   });
 
