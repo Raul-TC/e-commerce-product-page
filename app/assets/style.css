@@ -260,6 +260,7 @@ header {
   position: relative;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .close,
 .arrowLeft,
@@ -292,6 +293,7 @@ header {
   justify-content: center;
   align-items: center;
   left: -1rem;
+  cursor: pointer;
 }
 .arrowRight {
   right: -1rem;
@@ -302,8 +304,30 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .none {
   display: none;
+}
+
+.slide-slides {
+  position: relative;
+  height: auto;
+}
+
+.slider-slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.slider-slide.activeImage {
+  visibility: visible;
+  opacity: 1;
 }

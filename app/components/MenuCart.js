@@ -22,12 +22,10 @@ export function MenuCart() {
   `;
 
   document.addEventListener("click", (e) => {
-    console.info(e.target);
     if (
       e.target.matches(".shoppingCart") ||
       e.target.matches(".shoppingCart *")
     ) {
-      console.info("ingo");
       document.querySelector(".divCard").classList.toggle("none");
       document.querySelector(".elementsCart").classList.toggle("none");
     }
