@@ -11,5 +11,6 @@ export function Price() {
   <span class="priceDecoration">$250.00</span>
   `;
 
+  $price.classList.add("precios");
   return $price;
 }

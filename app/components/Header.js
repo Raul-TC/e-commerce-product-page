@@ -1,6 +1,7 @@
 import { Logo } from "./Logo.js";
 import { Menu } from "./Menu.js";
 import { MenuCart } from "./MenuCart.js";
+import { OpenMenu } from "./OpenMenu.js";
 import { ShoppingCart } from "./ShoppingCart.js";
 import { User } from "./User.js";
 export function Header() {
@@ -10,6 +11,7 @@ export function Header() {
   $containerRight.classList.add("containerRight");
   $containerLeft.classList.add("containerLeft");
 
+  $containerLeft.appendChild(OpenMenu());
   $containerLeft.appendChild(Logo());
   $containerLeft.appendChild(Menu());
 

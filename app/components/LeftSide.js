@@ -8,6 +8,7 @@ export function LeftSide() {
 
   $leftSideDiv.appendChild(ImageMain());
   $leftSideDiv.appendChild(ImagesSlide());
+  $leftSideDiv.appendChild(Carrousel());
   let plus = 1;
   setTimeout(() => {
     const $images = Array.from(
@@ -15,6 +16,7 @@ export function LeftSide() {
     );
     let thumbnail = document.querySelectorAll(".modal .imagesContainer img");
     // console.info($images);
+    document.querySelector(".carrousel").classList.add("none");
     document.addEventListener(
       "click",
       (e) => {
@@ -92,5 +94,14 @@ export function LeftSide() {
       100
     );
   });
+
+  setTimeout(() => {
+    if (window.screen.width <= 428) {
+      document.querySelector(".carrousel").classList.remove("none");
+      $leftSideDiv.querySelector(".imageMain").classList.add("none");
+      $leftSideDiv.querySelector(".imagesContainer").classList.add("none");
+      $leftSideDiv.querySelector(".close").classList.add("none");
+    }
+  }, 100);
   return $leftSideDiv;
 }

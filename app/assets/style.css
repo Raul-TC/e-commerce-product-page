@@ -261,15 +261,16 @@ header {
   width: 500px;
   height: 500px;
   flex-direction: row;
-  position: relative;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 990;
 }
 .close,
 .arrowLeft,
 .arrowRight {
   position: absolute;
+  z-index: 990;
 }
 .activeModalImg {
   display: block;
@@ -417,4 +418,132 @@ header {
   margin-left: 0.5rem;
   font-size: 1rem;
   font-weight: 700;
+}
+.closeMenu {
+  display: none;
+}
+.openMenu {
+  display: none;
+}
+@media screen and (max-width: 428px) {
+  .main {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  .containerLeft {
+    justify-content: space-around;
+  }
+
+  .containerRight {
+    width: 20%;
+    margin-right: 2rem;
+  }
+  .rightSide h1 {
+    margin-top: 0;
+  }
+  .rightSide h2 {
+    margin-bottom: 1rem;
+  }
+  .containerMenu {
+    position: fixed;
+    background-color: var(--White);
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 50%;
+    padding-top: 3rem;
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .containerMenu a {
+    color: var(--Black);
+    height: auto;
+    line-height: initial;
+    margin-bottom: 1.5rem;
+  }
+  .closeMenu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    cursor: pointer;
+  }
+  .none {
+    display: none;
+  }
+  .openMenu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .userContainer {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hideMenu {
+    transform: translateX(-100%);
+  }
+
+  .carrousel {
+    width: 100%;
+    height: auto;
+  }
+
+  .arrowLeft {
+    left: 0;
+  }
+
+  .arrowRight {
+    right: 0;
+  }
+  .rightSide {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .rightSide h2 {
+    font-size: 2rem;
+  }
+
+  .containerPrice {
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 0;
+  }
+  .counter {
+    border-radius: 10px;
+    background-color: var(--LightGrayishBlue);
+    margin: 1rem;
+    padding: 1em;
+    font-weight: 700;
+    width: 100%;
+    display: block;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .addToCart {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .precios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
