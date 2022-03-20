@@ -3,7 +3,7 @@ export function Price() {
 
   $price.innerHTML = `<span class="price"> <p>$125.00</p>
   
-  <span class="porcentaje">$0%</span>
+  <span class="porcentaje">50%</span>
 
 
   </span> 

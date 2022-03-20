@@ -58,9 +58,10 @@ header {
   height: 100%;
   text-decoration: none;
   line-height: 110px;
+  font-weight: 700;
   color: var(--GrayishBlue);
   transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
-  padding: 0 0.5rem;
+  padding: 0 1.5rem;
 }
 
 .containerMenu a:hover {
@@ -97,7 +98,9 @@ header {
   width: 20rem;
   right: -4rem;
   height: auto;
+  transform: translateY(-200%);
   z-index: 999;
+  transition: transform 0.4s ease;
 }
 .elementsCart {
   padding: 1rem;
@@ -112,6 +115,9 @@ header {
   width: 2.9rem;
   height: 2.9rem;
   border-radius: 5px;
+}
+.element .price {
+  margin-left: 0.5rem;
 }
 .element .price p,
 #priceBase {
@@ -137,10 +143,11 @@ header {
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 .btnCheckout:hover {
-  background-color: var(--PaleOrange);
-  color: var(--Orange);
+  opacity: 0.4;
+  color: var(--White);
 }
 .cartName {
   font-size: 1rem;
@@ -224,6 +231,7 @@ header {
   cursor: pointer;
   border-radius: 10px;
   display: flex;
+  background-color: var(--White);
 }
 .image img {
   border-radius: inherit;
@@ -232,13 +240,13 @@ header {
   object-fit: contain;
 }
 .imagesContainer img:hover {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 .active {
   border: 3px solid var(--Orange);
 }
 .opacityImage {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 /* Modal */
@@ -272,6 +280,12 @@ header {
   position: absolute;
   z-index: 990;
 }
+.arrowRight img {
+  margin-left: 0.27rem;
+}
+.arrowLeft img {
+  margin-right: 0.27rem;
+}
 .activeModalImg {
   display: block;
   border-radius: 15px;
@@ -283,9 +297,8 @@ header {
 
 .close {
   right: 0;
-  top: -2rem;
+  top: -2.5rem;
   width: 1.5rem;
-  transform: rotate(45deg);
   cursor: pointer;
 }
 
@@ -314,29 +327,6 @@ header {
 
 .none {
   display: none;
-}
-
-.slide-slides {
-  position: relative;
-  height: auto;
-}
-.slider-slides img {
-  border-radius: 15px;
-}
-.slider-slide {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.slider-slide.activeImage {
-  visibility: visible;
-  opacity: 1;
 }
 
 .rightSide {
@@ -414,6 +404,10 @@ header {
   cursor: pointer;
 }
 
+.addToCart:hover {
+  box-shadow: 0 0 20px 15px var(--PaleOrange);
+  opacity: 0.5;
+}
 .addToCart p {
   margin-left: 0.5rem;
   font-size: 1rem;
@@ -423,8 +417,15 @@ header {
   display: none;
 }
 .openMenu {
+  width: 2rem;
+  height: 2rem;
   display: none;
 }
+
+.hideMenuCart {
+  transform: translateY(0%);
+}
+
 @media screen and (max-width: 428px) {
   .main {
     grid-template-columns: 1fr;
@@ -460,7 +461,7 @@ header {
     left: 0;
     top: 0;
     width: 50%;
-    padding-top: 3rem;
+    padding-top: 5rem;
     transform: translateX(0%);
     transition: transform 0.3s ease;
     z-index: 999;
@@ -472,18 +473,21 @@ header {
     line-height: initial;
     margin-bottom: 1.5rem;
   }
+
   .closeMenu {
     display: block;
     position: absolute;
-    top: 1rem;
-    left: 0.5rem;
+    top: 2.5rem;
+    left: 1.3rem;
     cursor: pointer;
   }
   .none {
     display: none;
   }
   .openMenu {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
   }
 
@@ -502,15 +506,23 @@ header {
   }
 
   .arrowLeft {
-    left: 0;
+    left: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .arrowRight {
-    right: 0;
+    right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .arrowRight img {
+    margin-left: 0.15rem;
   }
   .rightSide {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 0;
   }
 
@@ -523,6 +535,7 @@ header {
     border-radius: 10px;
     margin-top: 0;
   }
+
   .counter {
     border-radius: 10px;
     background-color: var(--LightGrayishBlue);
@@ -545,5 +558,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .divCard {
+    position: fixed;
+    transform: translateY(-200%);
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 120px;
+    transition: transform 0.4s ease;
+  }
+
+  .hideMenuCart {
+    transform: translateY(0%);
   }
 }

@@ -13,7 +13,6 @@ export function Menu() {
   `;
 
   $containerMenu.appendChild(MenuHamburguerClose());
-  console.info(window.screen.width);
   if (window.screen.width <= 428) {
     $containerMenu.classList.add("hideMenu");
   }

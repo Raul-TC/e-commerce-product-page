@@ -19,13 +19,12 @@ export function Counter() {
       }
     }
     let multi = 125 * plus;
-    console.info(`$${multi}.00`);
 
     if (e.target.matches(".addToCart") || e.target.matches(".addToCart *")) {
       if ($count.textContent === 0) {
         return;
       }
-      console.info("agreado al carrito");
+
       document.querySelector(".cartEmpty").classList.add("none");
 
       document.getElementById("countElements").textContent = plus;

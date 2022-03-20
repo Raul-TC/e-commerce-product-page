@@ -1,5 +1,4 @@
 import { Carrousel } from "./Carrousel.js";
-import { ImageMain } from "./ImageMain.js";
 import { ImagesSlide } from "./ImagesSlide.js";
 
 export function Modal() {

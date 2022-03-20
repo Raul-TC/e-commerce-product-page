@@ -1,7 +1,7 @@
 export function MenuCart() {
   const $divCard = document.createElement("div");
 
-  $divCard.classList.add("divCard", "none");
+  $divCard.classList.add("divCard");
 
   $divCard.innerHTML = `
     <p class="cartName">Cart</p>
@@ -26,7 +26,8 @@ export function MenuCart() {
       e.target.matches(".shoppingCart") ||
       e.target.matches(".shoppingCart *")
     ) {
-      document.querySelector(".divCard").classList.toggle("none");
+      //  document.querySelector(".divCard").classList.toggle("none");
+      document.querySelector(".divCard").classList.toggle("hideMenuCart");
       // document.querySelector(".elementsCart").classList.toggle("none");
     }
   });
