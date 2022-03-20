@@ -175,6 +175,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+.slider-main img {
+  border-radius: 15px;
+}
 .emptyText {
   color: var(--DarkGrayishBlue);
   font-weight: 700;
