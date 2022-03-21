@@ -21,16 +21,16 @@ export function Counter() {
     let multi = 125 * plus;
 
     if (e.target.matches(".addToCart") || e.target.matches(".addToCart *")) {
-      if ($count.textContent === 0) {
+      if ($count.textContent === "0") {
         return;
+      } else {
+        document.querySelector(".cartEmpty").classList.add("none");
+
+        document.getElementById("countElements").textContent = plus;
+        document.querySelector(".countCart").textContent = plus;
+        document.getElementById("totalPrice").textContent = `$${multi}.00`;
+        document.querySelector(".elementsCart").classList.remove("none");
       }
-
-      document.querySelector(".cartEmpty").classList.add("none");
-
-      document.getElementById("countElements").textContent = plus;
-      document.querySelector(".countCart").textContent = plus;
-      document.getElementById("totalPrice").textContent = `$${multi}.00`;
-      document.querySelector(".elementsCart").classList.remove("none");
     }
 
     if (e.target.matches(".trash")) {
